@@ -1,0 +1,431 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <title>مقایسه همه شرکت‌های بیمه | ارزان‌ترین و بهترین شرایط</title>
+  <meta name="description" content="مقایسه شفاف همه شرکت‌های بیمه و پیشنهاد ارزان‌ترین گزینه با بهترین شرایط پرداخت: آنلاین، کارشناس سیار، اقساطی بدون چک، بدون سود، بدون سفته. مشاوره رایگان.">
+  <meta name="format-detection" content="telephone=no">
+  <style>
+/*  انیمیشن چشمک زن تایپی تیتر سایت */
+    #cursor {
+  display:inline-block;
+  width:1px;
+  animation: blink 1s infinite;
+  color:#22c55e;
+  font-weight:bold;
+    }
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+    }
+
+
+    /* موبایل‌اول + اندازه‌های سیال */
+    :root{
+      --bg:#0f172a; --card:#111827; --text:#e5e7eb; --muted:#9ca3af;
+      --primary:#22c55e; --accent:#06b6d4; --radius:14px; --max:96rem;
+      --shadow:0 10px 20px rgba(0,0,0,.25);
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0}
+    body{
+      font-family: "Vazirmatn", system-ui, -apple-system, Segoe UI, Roboto, "Noto Naskh Arabic", sans-serif;
+      background: radial-gradient(1200px 600px at 80% -100%, #0ea5e9 0%, #0f172a 40%), var(--bg);
+      color:var(--text);
+      line-height:1.8;
+      -webkit-text-size-adjust:100%;
+      text-rendering:optimizeLegibility;
+    }
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;height:auto}
+    .container{max-width:var(--max);margin:0 auto;padding:0 1rem}
+
+    /* هدر و ناوبری */
+    header{
+      position:sticky; top:0; z-index:100;
+      backdrop-filter:saturate(150%) blur(10px);
+      background-color:#0f172acc;
+      border-bottom:1px solid #1f2937;
+    }
+    nav{
+      display:flex; align-items:center; justify-content:space-between;
+      gap:.75rem; padding:.75rem 0;
+    }
+    .brand{display:flex; align-items:center; gap:.75rem; font-weight:800}
+    .logo{
+      width:2.25rem; height:2.25rem; border-radius:.6rem;
+      background:linear-gradient(135deg,var(--primary),var(--accent));
+      display:grid; place-items:center; color:#0f172a; font-weight:900;
+    }
+
+    /* منوی موبایل */
+    .menu-toggle{
+      display:inline-flex; align-items:center; justify-content:center;
+      width:2.5rem; height:2.5rem; border-radius:.75rem;
+      border:1px solid #1f2937; background:#162033; color:var(--text);
+    }
+    .nav-links{
+      display:none; flex-direction:column; gap:.5rem;
+      position:absolute; right:1rem; left:1rem; top:3.5rem;
+      background:#0b1221; border:1px solid #1f2937; border-radius:.75rem; padding:.75rem;
+      box-shadow:var(--shadow);
+    }
+    .nav-links a{padding:.6rem .75rem; border-radius:.6rem}
+    .nav-links a:hover{background:#1f2937}
+    .nav-open .nav-links{display:flex}
+
+    /* دسکتاپ: نمایش افقی */
+    @media (min-width:768px){
+      .menu-toggle{display:none}
+      .nav-links{
+        position:static; display:flex; flex-direction:row;
+        gap:.75rem; background:transparent; border:none; box-shadow:none; padding:0;
+      }
+    }
+
+    /* CTA بالای هدر */
+    .cta-top a{
+      background:linear-gradient(135deg,var(--primary),#16a34a);
+      color:#062b12; padding:.6rem .9rem; border-radius:999px; font-weight:800;
+      box-shadow:0 10px 20px #16a34a2a; white-space:nowrap;
+    }
+    @media (max-width:767px){ .cta-top{display:none} }
+
+    /* بخش قهرمان */
+    .hero{padding:2rem 0 1rem}
+    .hero-card{
+      background:linear-gradient(180deg,#0b1221, var(--card));
+      border:1px solid #1f2937; border-radius:1.25rem; overflow:hidden;
+      display:grid; grid-template-columns:1fr; gap:.75rem;
+    }
+    .hero-content{padding:1.25rem}
+    h1{margin:0 0 .5rem; font-size:clamp(1.3rem, 2.5vw, 2rem); line-height:1.4}
+    .sub{color:var(--muted); margin:0 0 1rem; font-size:clamp(.95rem,1.8vw,1.05rem)}
+    .inline{display:flex; flex-wrap:wrap; gap:.5rem}
+    .badge{display:inline-flex; gap:.4rem; align-items:center; color:#10b981; font-weight:700; font-size:.95rem}
+
+    .hero-actions{display:flex; gap:.6rem; flex-wrap:wrap; margin-top:.75rem}
+    .btn{
+      display:inline-flex; align-items:center; gap:.5rem;
+      padding:.8rem 1rem; border-radius:.8rem; font-weight:800;
+      border:1px solid #1f2937; background:#162033; color:var(--text);
+      min-height:2.75rem; touch-action:manipulation;
+    }
+    .btn.primary{background:linear-gradient(135deg,var(--primary),#16a34a); color:#062b12; border:none}
+    .btn:active{transform:translateY(1px)}
+
+    .hero-side{padding:1rem; background:#0b1221; border-top:1px solid #1f2937}
+    .check{
+      display:flex; gap:.6rem; align-items:flex-start; margin:.5rem 0; padding:.6rem;
+      border-radius:.8rem; background:#0f1a2f; border:1px dashed #1f2937; font-size:.95rem
+    }
+    .check b{color:#22c55e}
+
+    /* دو ستون در نمایش‌های بزرگ‌تر */
+    @media (min-width:900px){
+      .hero-card{grid-template-columns:1.25fr .9fr}
+      .hero-side{border-top:none; border-left:1px solid #1f2937}
+    }
+
+    /* سکشن‌ها و گرید سیال */
+    section{padding:1.5rem 0}
+    h2{font-size:clamp(1.2rem,2.2vw,1.6rem); margin:0 0 .75rem}
+    .grid{
+      display:grid; gap:.9rem;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    }
+    .card{
+      background:var(--card); border:1px solid #1f2937; border-radius:1rem; padding:1rem
+    }
+    .label{font-size:.9rem; color:var(--muted); margin-bottom:.4rem}
+    .list{display:grid; gap:.45rem; margin:.5rem 0 0}
+    .list li{list-style:none; display:flex; gap:.5rem}
+
+    .divider{height:1px; background:#1f2937; margin:1rem 0}
+    .mono{font-family:ui-monospace, Menlo, Monaco, Consolas, "Liberation Mono", monospace}
+
+    /* فوتر */
+    .footer{margin:1rem 0 1.5rem; color:var(--muted); font-size:.9rem; text-align:center}
+
+    /* ترجیحات حرکت کاربر */
+    @media (prefers-reduced-motion: reduce){
+      *{scroll-behavior:auto !important; animation:none !important; transition:none !important}
+    }
+
+    /* پشتیبانی ناچ موبایل */
+    @supports(padding:max(0px)){
+      body{padding-bottom:env(safe-area-inset-bottom)}
+      header{padding-top:env(safe-area-inset-top)}
+    }
+  </style>
+</head>
+<body>
+
+  <!-- هدر و ناوبری -->
+  <header>
+    <div class="container">
+      <nav aria-label="صفحه">
+        <div class="brand">
+          <div class="logo" aria-hidden="true">علی اکبر نجفی</div>
+          <div>بیمه‌یار | مقایسه هوشمند بیمه</div>
+        </div>
+
+        <button class="menu-toggle" id="menu-toggle" aria-label="باز کردن منو" aria-controls="nav-links" aria-expanded="false">☰</button>
+
+        <div class="nav-links" id="nav-links" role="menu">
+          <a role="menuitem" href="#services">خدمات</a>
+          <a role="menuitem" href="#how">چرا ما</a>
+          <a role="menuitem" href="#faq">سوالات</a>
+          <a role="menuitem" href="#contact">تماس با ما</a>
+        </div>
+
+        <div class="cta-top">
+          <a href="#contact">استعلام فوری</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- بخش قهرمان -->
+  <div class="container hero">
+    <div class="hero-card">
+      <div class="hero-content">  
+        <!-- تیتر انیمشنی تایپی -->
+        <h1 id="animated-title"><span id="typed-text"></span><span id="cursor">|</span></h1>
+        <!-- بی‌طرفانه ببینید، هوشمندانه انتخاب کنید -->
+        <!-- بیطرفی ما، اطمینان شما -->
+        <!-- ی‌طرفی ما، اطمینان شما --> 
+        <!-- مقایسه شفاف، انتخاب مطمئن -->
+        <p class="sub">من علی اکبر نجفی<br> نماینده مستقل هستم و همه شرکت‌های بیمه را بی طرفانه و شفاف مقایسه می‌کنم تا دقیقاً متناسب با شرایط شما، بهترین و ارزان‌ترین گزینه را معرفی کنم.</p>
+
+        <div class="inline" aria-label="مزایا">
+          <div class="badge">✅ مقایسه بی‌طرفانه، انتخاب هوشمندانه</div>
+          <div class="badge">✅ مشاوره رایگان و سریع</div>
+          <div class="badge">✅ از دم قسط : بدون چک، بدون سود، بدون سفته</div>
+        </div>
+
+        <div class="hero-actions">
+          <a class="btn primary" href="#contact">استعلام رایگان</a>
+          <a class="btn" href="#services">دیدن خدمات و شرایط</a>
+        </div>
+      </div>
+
+      <aside class="hero-side" aria-label="نکات کلیدی">
+        <div class="check"><b>پرداخت خسارت : </b>اعزام کارشناس خسارت سیار و پرداخت انلاین خسارت</div>
+        <div class="check"><b>اقساط: </b> اقساط از دم قسط بدون چک و سفته، بدون سود</div>
+        <div class="check"><b>پشتیبانی :</b> پاسخ‌گویی سریع </div>
+      </aside>
+    </div>
+  </div>
+
+  <main class="container">
+
+    <!-- خدمات -->
+    <section id="services" aria-labelledby="services-title">
+      <h1 id="services-title">خدمات اصلی</h1>
+      <div class="grid">
+        <div class="card">
+          <div class="label">مقایسه شرکت‌ها</div>
+          <strong>مقایسه شفاف حق‌بیمه و پوشش‌ها</strong>
+          <ul class="list">
+            <li><span>•</span>پیشنهاد ارزان‌ترین حق‌بیمه با حفظ پوشش‌های ضروری</li>
+            <li><span>•</span> جدول تفاوت‌ها: فرانشیز، خسارت سیار، سرعت رسیدگی، مقایسه توان مالی شرکت های بیمه</li>
+            <li><span>•</span> پیشنهاد شخصی‌سازی‌شده با توجه به نیاز شما</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="label">روش های پرداخت خسارت</div>
+          <strong>پرداخت آنلاین یا حضوری توسط کارشناس سیار</strong>
+          <ul class="list">
+            <li><span>•</span> قابلیت پرداخت خسارت انلاین</li>
+            <li><span>•</span> اعزام کارشناس برای دریافت و تحویل مدارک</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="label">اقساطی آسان</div>
+          <strong>از دم قسط — بدون چک، بدون سود، بدون سفته</strong>
+          <ul class="list">
+            <li><span>•</span> قابلیت تعلق وام برای پیش پرداخت بیمه</li>
+            <li><span>•</span> شروع فوری پوشش پس از ثبت درخواست</li>
+            <li><span>•</span> مدارک حداقلی و فرآیند ساده</li>
+            <li><span>•</span> برنامه اقساط قابل تنظیم</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider" role="separator" aria-hidden="true"></div>
+
+    <!-- چرا ما -->
+    <section id="how" aria-labelledby="how-title">
+      <h1 id="how-title">چرا ما را انتخاب کنید</h1>
+      <div class="grid">
+        <div class="card">
+          <strong>نماینده مستقل،انتخاب  بیطرفانه شرکت بیمه</strong>
+          <p>تصمیم‌گیری یا پیشنهاد ما بر اساس واقعیت‌ها و مقایسه‌ی منصفانه است، نه علاقه یا تعصب. تصمیم نهایی براساس داده‌های واقعی، قیمت، پوشش و سابقه خدمات ارائه می‌شود.</p>
+        </div>
+        <div class="card">
+          <strong>سرعت و سادگی</strong>
+          <p>استعلام، مقایسه، انتخاب. شما انتخاب می‌کنید، باقی کارها از ثبت تا پرداخت با ما.</p>
+        </div>
+        <div class="card">
+          <strong>پشتیبانی انسانی</strong>
+          <p>تماس، روبیکا،جهت مشاوره در خدمت شما هستیم.</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider" role="separator" aria-hidden="true"></div>
+
+    <!-- سوالات متداول -->
+    <section id="faq" aria-labelledby="faq-title">
+               <h1 id="faq-title">سوالات متداول</h1>
+      <div class="grid">
+
+          <div class="card">
+          <strong> بدون چک واقعاً ممکن است؟</strong>
+          <p>بله، با شرایط مشخص و مدارک حداقلی. جزئیات برنامه اقساط را هنگام تماس شفاف توضیح می‌دهیم.</p>
+          </div>    
+          <div class="card">
+          <strong>الان بیمه دارم بازم میتونم تماس بگیرم و شماره پلاکمو ثبت کنید تا اولین بیمه رو شما صادر کنید برام؟</strong>
+          <p>بله حتما با کمال میل میتونید تماس بگیرید و کارشناسان ما تلفن و تاریخ انقضا بیمه نامه شمارو ثبت و در نهایت چند روز قبل جهت صدور بیمه نامه با شما تماس خواهیم گرفت </p>
+          </div>
+          <div class="card">
+          <strong>چطوری اعتماد کنم؟</strong>
+          <p>بعد از صدور بیمه نامه،برگه گواهی بیمه نامه رو برای شما چاپ و ارسال میکنیم همچنین بیمه نامه در سایت بیمه مرکزی قابل استعلام هست، و میتونید حتی در نمایندگی بیمه هم استعلام بگیرید </p>
+          </div> 
+          <div class="card">
+          <strong>هزینه مشاوره چقدر است؟</strong>
+          <p>مشاوره و استعلام رایگان است. فقط پس از تایید شما اقدام می‌کنیم.</p>
+          </div>
+          <div class="card">
+          <strong>چقدر طول می‌کشد؟</strong>
+          <p>در بیشتر موارد استعلام و مقایسه همان روز آماده می‌شود،اگر تا قبل ساعت 8 بعد از ظهر درخواست صدور بیمه کنید از ساعت 12 شب  قابل استفاده هست.</p>
+          </div>
+          
+      </div>
+    </section>
+
+    <div class="divider" role="separator" aria-hidden="true"></div>
+
+    <!-- تماس -->
+    <section id="contact" aria-labelledby="contact-title">
+      <h1 id="contact-title">تماس و استعلام فوری</h1>
+      <div class="grid">
+        <div class="card">
+          <div class="label">روبیکا</div>
+          <p>پیام بدهید تا، جدول مقایسه و پیشنهاد نهایی برایتان ارسال شود.</p>
+          <p class="mono">شماره روبیکا: <span id="ro-number">09039615929</span></p>
+          <div class="hero-actions">
+            <a class="btn primary" id="ro-btn" href="#">شروع گفت‌وگو در روبیکا</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="label">تلفن</div>
+          <p>برای پاسخ سریع و روشن، همین حالا تماس بگیرید.</p>
+          <p class="mono">شماره تماس: <span id="tel-number">09039615929</span></p>
+          <div class="hero-actions">
+            <a class="btn" id="tel-btn" href="#">تماس مستقیم</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="label">ایمیل (اختیاری)</div>
+          <p>اگر ترجیح می‌دهید اطلاعات کامل را ایمیلی دریافت کنید، پیام دهید.</p>
+          <p class="mono">ایمیل: <span id="email-address">AN.aliakbar.najafi@gmail.com</span></p>
+          <div class="hero-actions">
+            <a class="btn" id="email-btn" href="mailto:AN.aliakbar.najafi@gmail.com">ارسال ایمیل</a>
+          </div>
+        </div>
+      </div>
+      <p class="footer">این صفحه برای موبایل و دسکتاپ بهینه شده و روی همه دستگاه‌ها سریع و خواناست.</p>
+    </section>
+
+  </main>
+
+  <script>
+    // منوی موبایل
+    const menuBtn = document.getElementById('menu-toggle');
+    const nav = document.getElementById('nav-links');
+    menuBtn.addEventListener('click', ()=>{
+      document.body.classList.toggle('nav-open');
+      const open = document.body.classList.contains('nav-open');
+      menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    // بستن منو پس از کلیک
+    nav.querySelectorAll('a').forEach(link=>{
+      link.addEventListener('click', ()=> document.body.classList.remove('nav-open'));
+    });
+
+    // شماره‌ها و ایمیل (شخصی‌سازی سریع)
+    const roNumberRaw = "09039615929"; // روبیکا
+    const telNumberRaw = "09039615929";  // تلفن
+    const emailRaw    = "AN.aliakbar.najafi@gmail.com";
+
+    document.getElementById("ro-number").textContent = roNumberRaw;
+    document.getElementById("tel-number").textContent = telNumberRaw;
+    document.getElementById("email-address").textContent = emailRaw;
+
+    const roLink = "https://rubika.ir/an_Aliakbar_najafi"; //+ watsappNumberRaw.replace(/[^\d+]/g,"").replace("+","");
+    const telLink = "tel:" + telNumberRaw.replace(/[^\d+]/g,"");
+    document.getElementById("ro-btn").setAttribute("href", roLink);
+    document.getElementById("tel-btn").setAttribute("href", telLink);
+
+    // اسکرول نرم
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click',e=>{
+        const id = a.getAttribute('href').slice(1);
+        const el = document.getElementById(id);
+        if(el){ e.preventDefault(); el.scrollIntoView({behavior:'smooth', block:'start'}); }
+      });
+    });
+  </script>
+
+
+<script> // اسکریپت انیمیشن تیتر سایت
+  const phrases = [
+    "بی‌طرفانه ببینید، هوشمندانه انتخاب کنید",
+    "مقایسه شفاف، انتخاب مطمئن",
+    "بیطرفی ما، اطمینان شما",
+    "همه شرکت‌ها، یک نگاه ساده",
+    "بیمه‌ای که واقعاً به دردتان می‌خورد"
+  ];
+
+  const typedText = document.getElementById("typed-text");
+  let index = 0;
+  let char = 0;
+  let typing = true;
+
+  function animateText() {
+    const current = phrases[index];
+    if (typing) {
+      char++;
+      typedText.textContent = current.slice(0, char);
+      if (char === current.length) {
+        typing = false;
+        setTimeout(animateText, 1400);
+        return;
+      }
+    } else {
+      char--;
+      typedText.textContent = current.slice(0, char);
+      if (char === 0) {
+        typing = true;
+        index = (index + 1) % phrases.length;
+      }
+    }
+    setTimeout(animateText, typing ? 50 : 15);
+  }
+
+  animateText();
+</script>
+
+
+
+</body>
+</html>
