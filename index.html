@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
   <title>انتخاب هوشمندانه بیمه</title>
-  <link rel="icon" type="image/png" sizes="48x48" href="https://raw.githubusercontent.com/aliakbar-najafi/2/main/icon%20web%20chrome.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="https://raw.githubusercontent.com/aliakbar-najafi/2/main/icon%20web%20chrome.png"> <!-- icon Web-->
   <meta name="description" content="مقایسه شفاف همه شرکت‌های بیمه و پیشنهاد ارزان‌ترین گزینه با بهترین شرایط پرداخت: آنلاین، کارشناس سیار، اقساطی بدون چک، بدون سود، بدون سفته. مشاوره رایگان.">
   <meta name="format-detection" content="telephone=no">
   <style>
@@ -56,7 +56,7 @@
     }
     .brand{display:flex; align-items:center; gap:.75rem; font-weight:800}
     .logo{
-      width:2.25rem; height:2.25rem; border-radius:.6rem;
+      width:3rem; height:3rem; border-radius:.6rem;
       background:linear-gradient(135deg,var(--primary),var(--accent));
       display:grid; place-items:center; color:#0f172a; font-weight:900;
     }
@@ -175,7 +175,7 @@
       <nav aria-label="صفحه">
         <div class="brand">
          <div class="logo" aria-hidden="true">
-        <img src="https://raw.githubusercontent.com/aliakbar-najafi/2/main/icon%20web%20chrome.png" alt="بیمه هوشمند با علی اکبر نجفی" width="48" height="48">
+        <img src="https://raw.githubusercontent.com/aliakbar-najafi/2/main/logo%20site%20page.png" alt="بیمه هوشمند با علی اکبر نجفی" width="48" height="48">
         </div>
           <div>بیمه هوشمند | انتخاب هوشمند</div>
         </div>
@@ -330,24 +330,37 @@
     <section id="contact" aria-labelledby="contact-title">
       <h1 id="contact-title">تماس و استعلام فوری</h1>
       <div class="grid">
+
+        <div class="card">
+          <div class="label">تلفن</div>
+          <p>برای پاسخ سریع و روشن، همین حالا تماس بگیرید.</p>
+          <p class="mono">شماره تماس: <span id="tel-number">09202812526</span></p>
+          <div class="hero-actions">
+            <a class="btn" id="tel-btn" href="#">تماس مستقیم</a>
+          </div>
+        </div>
+
         <div class="card">
           <div class="label">روبیکا</div>
           <p>پیام بدهید تا، جدول مقایسه و پیشنهاد نهایی برایتان ارسال شود.</p>
-          <p class="mono">شماره روبیکا: <span id="ro-number">09039615929</span></p>
+          <p class="mono">شماره روبیکا: <span id="ro-number">09202812526</span></p>
+          <p class="mono"> ایدی روبیکا: <span id="ro-username">BimeSmart@</span></p>
           <div class="hero-actions">
             <a class="btn primary" id="ro-btn" href="#">شروع گفت‌وگو در روبیکا</a>
           </div>
         </div>
 
         <div class="card">
-          <div class="label">تلفن</div>
-          <p>برای پاسخ سریع و روشن، همین حالا تماس بگیرید.</p>
-          <p class="mono">شماره تماس: <span id="tel-number">09039615929</span></p>
+          <div class="label">تلگرام</div>
+          <p>پیام بدهید تا، جدول مقایسه و پیشنهاد نهایی برایتان ارسال شود.</p>
+          <p class="mono">شماره تلگرام: <span id="teleg-number">09202812526</span></p>
+          <p class="mono"> ایدی تلگرام: <span id="teleg-username">BimeSmart@</span></p>
           <div class="hero-actions">
-            <a class="btn" id="tel-btn" href="#">تماس مستقیم</a>
+            <a class="btn primary" id="teleg-btn" href="#">شروع گفت‌وگو در تلگرام</a>
           </div>
         </div>
-
+        
+        <!--
         <div class="card">
           <div class="label">ایمیل (اختیاری)</div>
           <p>اگر ترجیح می‌دهید اطلاعات کامل را ایمیلی دریافت کنید، پیام دهید.</p>
@@ -356,11 +369,13 @@
             <a class="btn" id="email-btn" href="mailto:AN.aliakbar.najafi@gmail.com">ارسال ایمیل</a>
           </div>
         </div>
+        -->
+
       </div>
       <p class="footer">
   مقایسه، انتخاب، صرفه‌جویی — با ما همیشه بیمه‌ات ارزون‌تره!<br>
   ما اینجاییم تا بهترین بیمه رو با مناسب‌ترین قیمت برات پیدا کنیم.<br>
-  📞 تماس برای مشاوره و ثبت بیمه: <a href="tel:09039615929">09039615929</a><br>
+  📞 تماس برای مشاوره و ثبت بیمه: <a href="tel:09202812526">2526 281 0920</a><br>
   📍 فعال در سراسر ایران | 💬 پاسخ‌گویی سریع و دوستانه
 </p>
 
@@ -383,17 +398,21 @@
     });
 
     // شماره‌ها و ایمیل (شخصی‌سازی سریع)
-    const roNumberRaw = "09039615929"; // روبیکا
-    const telNumberRaw = "09039615929";  // تلفن
+    const roNumberRaw = "09202812526"; // روبیکا
+    const telNumberRaw = "2526 281 0920";  // تلفن
     const emailRaw    = "AN.aliakbar.najafi@gmail.com";
+    const telegramRaw    = "09202812526";
 
     document.getElementById("ro-number").textContent = roNumberRaw;
     document.getElementById("tel-number").textContent = telNumberRaw;
     document.getElementById("email-address").textContent = emailRaw;
+    document.getElementById("telegram-number").textContent = telegramRaw;
 
-    const roLink = "https://rubika.ir/an_Aliakbar_najafi"; //+ watsappNumberRaw.replace(/[^\d+]/g,"").replace("+","");
+    const roLink = "https://rubika.ir/bimesmart"; //+ watsappNumberRaw.replace(/[^\d+]/g,"").replace("+","");
+    const teleglink = "https://t.me/bimesmart";
     const telLink = "tel:" + telNumberRaw.replace(/[^\d+]/g,"");
     document.getElementById("ro-btn").setAttribute("href", roLink);
+    document.getElementById("teleg-btn").setAttribute("href", teleglink);
     document.getElementById("tel-btn").setAttribute("href", telLink);
 
     // اسکرول نرم
