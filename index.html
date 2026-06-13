@@ -4,461 +4,249 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
   <title>انتخاب هوشمندانه بیمه</title>
-  <link rel="icon" type="image/png" sizes="48x48" href="https://raw.githubusercontent.com/aliakbar-najafi/2/main/icon%20web%20chrome.png"> <!-- icon Web-->
+  <link rel="icon" type="image/png" sizes="48x48" href="https://raw.githubusercontent.com/aliakbar-najafi/2/main/icon%20web%20chrome.png">
   <meta name="description" content="مقایسه شفاف همه شرکت‌های بیمه و پیشنهاد ارزان‌ترین گزینه با بهترین شرایط پرداخت: آنلاین، کارشناس سیار، اقساطی بدون چک، بدون سود، بدون سفته. مشاوره رایگان.">
   <meta name="format-detection" content="telephone=no">
+  
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700;800;900&display=swap" rel="stylesheet">
+
   <style>
-/*  انیمیشن چشمک زن تایپی تیتر سایت */
+    /* ========================================================
+       پالت رنگی و متغیرهای مدرن (Premium SaaS Dark Mode)
+       ======================================================== */
+    :root {
+      --bg-base: #090d16;
+      --glass-bg: rgba(17, 24, 39, 0.65);
+      --glass-border: rgba(255, 255, 255, 0.08);
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      
+      /* رنگ‌های نئونی پایه */
+      --emerald: #10b981;
+      --emerald-glow: rgba(16, 185, 129, 0.3);
+      --cyan: #06b6d4;
+      --cyan-glow: rgba(6, 182, 212, 0.3);
+      
+      /* رنگ‌های برند برای کارت‌های تماس */
+      --brand-rubika: #f97316;
+      --brand-telegram: #3b82f6;
+      --brand-phone: #10b981;
+      --brand-email: #eab308;
+
+      --radius: 16px;
+      --max: 96rem;
+    }
+
+    * { box-sizing: border-box; }
+    html, body { margin: 0; scroll-behavior: smooth; }
+    
+    body {
+      font-family: "Vazirmatn", system-ui, -apple-system, sans-serif;
+      background-color: var(--bg-base);
+      /* افکت هاله نوری در پس‌زمینه بدنه */
+      background-image: 
+        radial-gradient(800px circle at 15% -5%, rgba(16, 185, 129, 0.08), transparent 70%),
+        radial-gradient(800px circle at 85% 105%, rgba(6, 182, 212, 0.08), transparent 70%);
+      background-attachment: fixed;
+      color: var(--text-main);
+      line-height: 1.8;
+      letter-spacing: -0.01em;
+      -webkit-text-size-adjust: 100%;
+      text-rendering: optimizeLegibility;
+    }
+
+    a { color: inherit; text-decoration: none; transition: all 0.3s ease; }
+    img { max-width: 100%; height: auto; }
+    .container { max-width: var(--max); margin: 0 auto; padding: 0 1rem; }
+
+    /* ========================================================
+       المان‌های شیشه‌ای (Glassmorphism)
+       ======================================================== */
+    .glass {
+      background: var(--glass-bg);
+      backdrop-filter: blur(16px) saturate(180%);
+      -webkit-backdrop-filter: blur(16px) saturate(180%);
+      border: 1px solid var(--glass-border);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    }
+
+    /* ========================================================
+       تایپوگرافی و گرادیان متنی
+       ======================================================== */
+    h1, h2 {
+      margin: 0 0 1rem;
+      background: linear-gradient(135deg, var(--emerald), var(--cyan));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      display: inline-block;
+      line-height: 1.4;
+    }
+    h1 { font-size: clamp(1.4rem, 3vw, 2.2rem); font-weight: 900; }
+    h2 { font-size: clamp(1.2rem, 2.2vw, 1.6rem); font-weight: 800; }
+
+    #animated-title { display: block; margin-bottom: 0.5rem; }
+    #typed-text {
+      background: linear-gradient(135deg, var(--emerald), var(--cyan));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
     #cursor {
-  display:inline-block;
-  width:1px;
-  animation: blink 1s infinite;
-  color:#22c55e;
-  font-weight:bold;
+      display: inline-block; width: 2px;
+      animation: blink 1s infinite;
+      color: var(--emerald);
+      -webkit-text-fill-color: var(--emerald);
+      font-weight: bold; margin-right: 4px;
     }
+    @keyframes blink { 0%, 50% { opacity: 1; } 51%, 100% { opacity: 0; } }
 
-@keyframes blink {
-  0%, 50% { opacity: 1; }
-  51%, 100% { opacity: 0; }
+    /* ========================================================
+       هدر و ناوبری
+       ======================================================== */
+    header {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(9, 13, 22, 0.8);
+      backdrop-filter: blur(16px) saturate(180%);
+      -webkit-backdrop-filter: blur(16px) saturate(180%);
+      border-bottom: 1px solid var(--glass-border);
     }
-
-
-    /* موبایل‌اول + اندازه‌های سیال */
-    :root{
-      --bg:#0f172a; --card:#111827; --text:#e5e7eb; --muted:#9ca3af;
-      --primary:#22c55e; --accent:#06b6d4; --radius:14px; --max:96rem;
-      --shadow:0 10px 20px rgba(0,0,0,.25);
+    nav {
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 0.75rem; padding: 0.85rem 0;
     }
-    *{box-sizing:border-box}
-    html,body{margin:0}
-    body{
-      font-family: "Vazirmatn", system-ui, -apple-system, Segoe UI, Roboto, "Noto Naskh Arabic", sans-serif;
-      background: radial-gradient(1200px 600px at 80% -100%, #0ea5e9 0%, #0f172a 40%), var(--bg);
-      color:var(--text);
-      line-height:1.8;
-      -webkit-text-size-adjust:100%;
-      text-rendering:optimizeLegibility;
-    }
-    a{color:inherit;text-decoration:none}
-    img{max-width:100%;height:auto}
-    .container{max-width:var(--max);margin:0 auto;padding:0 1rem}
-
-    /* هدر و ناوبری */
-    header{
-      position:sticky; top:0; z-index:100;
-      backdrop-filter:saturate(150%) blur(10px);
-      background-color:#0f172acc;
-      border-bottom:1px solid #1f2937;
-    }
-    nav{
-      display:flex; align-items:center; justify-content:space-between;
-      gap:.75rem; padding:.75rem 0;
-    }
-    .brand{display:flex; align-items:center; gap:.75rem; font-weight:800}
-    .logo{
-      width:3rem; height:3rem; border-radius:.6rem;
-      background:linear-gradient(135deg,var(--primary),var(--accent));
-      display:grid; place-items:center; color:#0f172a; font-weight:900;
+    .brand { display: flex; align-items: center; gap: 0.75rem; font-weight: 800; }
+    .logo {
+      width: 3rem; height: 3rem; border-radius: 0.8rem;
+      background: linear-gradient(135deg, var(--emerald), var(--cyan));
+      display: grid; place-items: center; color: #090d16; font-weight: 900;
+      box-shadow: 0 4px 15px var(--emerald-glow);
     }
 
     /* منوی موبایل */
-    .menu-toggle{
-      display:inline-flex; align-items:center; justify-content:center;
-      width:2.5rem; height:2.5rem; border-radius:.75rem;
-      border:1px solid #1f2937; background:#162033; color:var(--text);
+    .menu-toggle {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 2.75rem; height: 2.75rem; border-radius: 0.75rem;
+      border: 1px solid var(--glass-border); background: var(--glass-bg);
+      color: var(--text-main); cursor: pointer; transition: all 0.3s ease;
     }
-    .nav-links{
-      display:none; flex-direction:column; gap:.5rem;
-      position:absolute; right:1rem; left:1rem; top:3.5rem;
-      background:#0b1221; border:1px solid #1f2937; border-radius:.75rem; padding:.75rem;
-      box-shadow:var(--shadow);
+    .menu-toggle:hover { background: rgba(255, 255, 255, 0.1); }
+    
+    .nav-links {
+      position: absolute; right: 1rem; left: 1rem; top: 4.5rem;
+      flex-direction: column; gap: 0.5rem; padding: 1rem;
+      border-radius: 1rem;
+      opacity: 0; visibility: hidden; transform: translateY(-15px);
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     }
-    .nav-links a{padding:.6rem .75rem; border-radius:.6rem}
-    .nav-links a:hover{background:#1f2937}
-    .nav-open .nav-links{display:flex}
+    .nav-open .nav-links { opacity: 1; visibility: visible; transform: translateY(0); display: flex; }
+    .nav-links a { padding: 0.6rem 1rem; border-radius: 0.6rem; font-weight: 700; color: var(--text-muted); }
+    .nav-links a:hover { background: rgba(255, 255, 255, 0.05); color: var(--text-main); }
 
-    /* دسکتاپ: نمایش افقی */
-    @media (min-width:768px){
-      .menu-toggle{display:none}
-      .nav-links{
-        position:static; display:flex; flex-direction:row;
-        gap:.75rem; background:transparent; border:none; box-shadow:none; padding:0;
+    /* دسکتاپ */
+    @media (min-width: 768px) {
+      .menu-toggle { display: none; }
+      .nav-links {
+        position: static; display: flex; flex-direction: row; opacity: 1; visibility: visible;
+        transform: translateY(0); background: transparent; border: none; box-shadow: none; padding: 0;
       }
+      .nav-links a { padding: 0.5rem 0.8rem; }
     }
 
-    /* CTA بالای هدر */
-    .cta-top a{
-      background:linear-gradient(135deg,var(--primary),#16a34a);
-      color:#062b12; padding:.6rem .9rem; border-radius:999px; font-weight:800;
-      box-shadow:0 10px 20px #16a34a2a; white-space:nowrap;
+    .cta-top a {
+      background: linear-gradient(135deg, var(--emerald), var(--cyan));
+      color: #022c22; padding: 0.6rem 1.2rem; border-radius: 999px; font-weight: 800;
+      box-shadow: 0 4px 15px var(--emerald-glow); white-space: nowrap; transition: transform 0.3s, box-shadow 0.3s;
     }
-    @media (max-width:767px){ .cta-top{display:none} }
-
-    /* بخش قهرمان */
-    .hero{padding:2rem 0 1rem}
-    .hero-card{
-      background:linear-gradient(180deg,#0b1221, var(--card));
-      border:1px solid #1f2937; border-radius:1.25rem; overflow:hidden;
-      display:grid; grid-template-columns:1fr; gap:.75rem;
+    .cta-top a:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 25px var(--emerald-glow);
     }
-    .hero-content{padding:1.25rem}
-    h1{margin:0 0 .5rem; font-size:clamp(1.3rem, 2.5vw, 2rem); line-height:1.4}
-    .sub{color:var(--muted); margin:0 0 1rem; font-size:clamp(.95rem,1.8vw,1.05rem)}
-    .inline{display:flex; flex-wrap:wrap; gap:.5rem}
-    .badge{display:inline-flex; gap:.4rem; align-items:center; color:#10b981; font-weight:700; font-size:.95rem}
+    @media (max-width: 767px) { .cta-top { display: none; } }
 
-    .hero-actions{display:flex; gap:.6rem; flex-wrap:wrap; margin-top:.75rem}
-    .btn{
-      display:inline-flex; align-items:center; gap:.5rem;
-      padding:.8rem 1rem; border-radius:.8rem; font-weight:800;
-      border:1px solid #1f2937; background:#162033; color:var(--text);
-      min-height:2.75rem; touch-action:manipulation;
+    /* ========================================================
+       بخش قهرمان (Hero Section)
+       ======================================================== */
+    .hero { padding: 3rem 0 2rem; }
+    .hero-card {
+      border-radius: 1.5rem; overflow: hidden;
+      display: grid; grid-template-columns: 1fr;
     }
-    .btn.primary{background:linear-gradient(135deg,var(--primary),#16a34a); color:#062b12; border:none}
-    .btn:active{transform:translateY(1px)}
-
-    .hero-side{padding:1rem; background:#0b1221; border-top:1px solid #1f2937}
-    .check{
-      display:flex; gap:.6rem; align-items:flex-start; margin:.5rem 0; padding:.6rem;
-      border-radius:.8rem; background:#0f1a2f; border:1px dashed #1f2937; font-size:.95rem
+    .hero-content { padding: 2rem; }
+    .sub { color: var(--text-muted); margin: 0 0 1.5rem; font-size: clamp(1rem, 1.8vw, 1.1rem); font-weight: 400; }
+    
+    .inline { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-bottom: 2rem; }
+    .badge {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      color: var(--emerald); font-weight: 700; font-size: 0.9rem;
+      padding: 0.5rem 1rem; border-radius: 999px;
+      background: rgba(16, 185, 129, 0.1); border: 1px solid rgba(16, 185, 129, 0.2);
+      transition: transform 0.3s, background 0.3s;
     }
-    .check b{color:#22c55e}
+    .badge:hover { transform: translateY(-2px); background: rgba(16, 185, 129, 0.15); }
 
-    /* دو ستون در نمایش‌های بزرگ‌تر */
-    @media (min-width:900px){
-      .hero-card{grid-template-columns:1.25fr .9fr}
-      .hero-side{border-top:none; border-left:1px solid #1f2937}
+    .hero-actions { display: flex; gap: 0.8rem; flex-wrap: wrap; }
+    
+    /* دکمه‌های مدرن */
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
+      padding: 0.85rem 1.5rem; border-radius: 1rem; font-weight: 800;
+      border: 1px solid var(--glass-border); background: rgba(255, 255, 255, 0.03); color: var(--text-main);
+      min-height: 3rem; touch-action: manipulation; cursor: pointer; transition: all 0.3s ease;
+    }
+    .btn:hover { background: rgba(255, 255, 255, 0.08); }
+    .btn.primary {
+      background: linear-gradient(135deg, var(--emerald), #059669);
+      color: #022c22; border: none; box-shadow: 0 6px 20px rgba(16, 185, 129, 0.25);
+    }
+    .btn.primary:hover {
+      transform: scale(1.03) translateY(-2px);
+      box-shadow: 0 10px 25px rgba(16, 185, 129, 0.4);
+    }
+    .btn:active { transform: scale(0.98); }
+
+    .hero-side {
+      padding: 2rem; background: rgba(9, 13, 22, 0.4);
+      border-top: 1px solid var(--glass-border); display: flex; flex-direction: column; gap: 1rem;
+    }
+    .check {
+      display: flex; gap: 0.75rem; align-items: flex-start; padding: 1rem;
+      border-radius: 1rem; background: rgba(255, 255, 255, 0.02);
+      border: 1px solid var(--glass-border); font-size: 0.95rem;
+      transition: transform 0.3s, border-color 0.3s;
+    }
+    .check:hover { transform: translateX(-5px); border-color: rgba(16, 185, 129, 0.3); }
+    .check b { color: var(--emerald); }
+
+    @media (min-width: 900px) {
+      .hero-card { grid-template-columns: 1.3fr 0.9fr; }
+      .hero-side { border-top: none; border-inline-start: 1px solid var(--glass-border); }
     }
 
-    /* سکشن‌ها و گرید سیال */
-    section{padding:1.5rem 0}
-    h2{font-size:clamp(1.2rem,2.2vw,1.6rem); margin:0 0 .75rem}
-    .grid{
-      display:grid; gap:.9rem;
-      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    /* ========================================================
+       سکشن‌ها و گریدها
+       ======================================================== */
+    section { padding: 3rem 0; }
+    .grid {
+      display: grid; gap: 1.25rem;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     }
-    .card{
-      background:var(--card); border:1px solid #1f2937; border-radius:1rem; padding:1rem
+    
+    .card {
+      border-radius: 1.25rem; padding: 1.5rem;
+      transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
     }
-    .label{font-size:.9rem; color:var(--muted); margin-bottom:.4rem}
-    .list{display:grid; gap:.45rem; margin:.5rem 0 0}
-    .list li{list-style:none; display:flex; gap:.5rem}
+    .card:hover { transform: translateY(-5px); box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3); }
+    
+    .label { font-size: 0.85rem; color: var(--cyan); margin-bottom: 0.5rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;}
+    .card > strong { display: block; font-size: 1.1rem; margin-bottom: 0.75rem; color: var(--text-main); }
+    .card p { color: var(--text-muted); margin: 0; }
+    
+    .list { display: grid; gap: 0.6rem; margin: 1rem 0 0; padding: 0; }
+    .list li { list-style: none; display: flex; gap: 0.6rem; align-items: flex-start; color: var(--text-muted); }
 
-    .divider{height:1px; background:#1f2937; margin:1rem 0}
-    .mono{font-family:ui-monospace, Menlo, Monaco, Consolas, "Liberation Mono", monospace}
+    .divider { height: 1px; background: linear-gradient(90deg, transparent, var(--glass-border), transparent); margin: 2rem 0; }
+    .mono { font-family: ui-monospace, Menlo, Monaco, Consolas, monospace; letter-spacing: 1px; color: var(--text-main); }
 
-    /* فوتر */
-    .footer{margin:1rem 0 1.5rem; color:var(--muted); font-size:.9rem; text-align:center}
-
-    /* ترجیحات حرکت کاربر */
-    @media (prefers-reduced-motion: reduce){
-      *{scroll-behavior:auto !important; animation:none !important; transition:none !important}
-    }
-
-    /* پشتیبانی ناچ موبایل */
-    @supports(padding:max(0px)){
-      body{padding-bottom:env(safe-area-inset-bottom)}
-      header{padding-top:env(safe-area-inset-top)}
-    }
-  </style>
-<!-- چت انلاین و پشتیبانی سایت -->
-<script type="text/javascript">
-  ["keydown","touchmove","touchstart","mouseover"].forEach(function(v){window.addEventListener(v,function(){if(!window.isGoftinoAdded){window.isGoftinoAdded=1;var i="45tuRm",d=document,g=d.createElement("script"),s="https://www.goftino.com/widget/"+i,l=localStorage.getItem("goftino_"+i);g.type="text/javascript",g.async=!0,g.src=l?s+"?o="+l:s;d.getElementsByTagName("head")[0].appendChild(g);}})});
-</script>
-
-</head>
-<body>
-
-  <!-- هدر و ناوبری -->
-  <header>
-    <div class="container">
-      <nav aria-label="صفحه">
-        <div class="brand">
-         <div class="logo" aria-hidden="true">
-        <img src="https://raw.githubusercontent.com/aliakbar-najafi/2/main/logo%20site%20page.png" alt="بیمه هوشمند با علی اکبر نجفی" width="48" height="48">
-        </div>
-          <div>بیمه هوشمند | انتخاب هوشمند</div>
-        </div>
-
-        <button class="menu-toggle" id="menu-toggle" aria-label="باز کردن منو" aria-controls="nav-links" aria-expanded="false">☰</button>
-
-        <div class="nav-links" id="nav-links" role="menu">
-          <a role="menuitem" href="#services">خدمات</a>
-          <a role="menuitem" href="#how">چرا ما</a>
-          <a role="menuitem" href="#faq">سوالات</a>
-          <a role="menuitem" href="#contact">تماس با ما</a>
-        </div>
-
-        <div class="cta-top">
-          <a href="#contact">استعلام فوری</a>
-        </div>
-      </nav>
-    </div>
-  </header>
-
-  <!-- بخش قهرمان -->
-  <div class="container hero">
-    <div class="hero-card">
-      <div class="hero-content">  
-        <!-- تیتر انیمشنی تایپی -->
-        <h1 id="animated-title"><span id="typed-text"></span><span id="cursor">|</span></h1>
-        <!-- بی‌طرفانه ببینید، هوشمندانه انتخاب کنید -->
-        <!-- بیطرفی ما، اطمینان شما -->
-        <!-- ی‌طرفی ما، اطمینان شما --> 
-        <!-- مقایسه شفاف، انتخاب مطمئن -->
-        <p class="sub">من علی اکبر نجفی<br> نماینده مستقل هستم و همه شرکت‌های بیمه را بی طرفانه و شفاف مقایسه می‌کنم تا دقیقاً متناسب با شرایط شما، بهترین و ارزان‌ترین گزینه را معرفی کنم.</p>
-
-        <div class="inline" aria-label="مزایا">
-          <div class="badge">✅ از دم قسط، بدون چک، بدون سود، بدون سفته</div>
-          <div class="badge">✅ خرید نقدی = صدور بیمه با ارزان ترین قیمت</div>
-          <div class="badge">✅ همه بیمه ها در یک نگاه ساده</div>
-        </div>
-
-        <div class="hero-actions">
-          <a class="btn primary" href="#contact">استعلام رایگان</a>
-          <a class="btn primary" href="#services">دیدن خدمات و شرایط</a>
-        </div>
-      </div>
-
-      <aside class="hero-side" aria-label="نکات کلیدی">
-        <div class="check"><b>پرداخت خسارت : </b>اعزام کارشناس خسارت سیار یا پرداخت انلاین خسارت</div>
-        <div class="check"><b>اقساط: </b>از دم قسط, بی سود, بی چک, بی سفته</div>
-        <div class="check"><b>پشتیبانی :</b> همین الان با من تماس بگیر حتی اگه بیمه داری!</div>
-        <div class="check"><b>پیش پرداخت نمیتونی بدی ؟</b>بهت وام پیش پرداخت میدیم تا از دم قسطی بشه</div>
-      </aside>
-    </div>
-  </div>
-
-  <main class="container">
-
-    <!-- خدمات -->
-    <section id="services" aria-labelledby="services-title">
-      <h1 id="services-title">خدمات اصلی</h1>
-      <div class="grid">
-        <div class="card">
-          <div class="label">مقایسه همه شرکت های بیمه</div>
-          <strong>مقایسه شفاف حق‌بیمه و پوشش‌ها</strong>
-          <ul class="list">
-            <li><span>•</span>پیشنهاد ارزان‌ترین حق‌بیمه با حفظ پوشش‌های ضروری</li>
-            <li><span>•</span> جدول تفاوت‌ها: فرانشیز، خسارت سیار، سرعت رسیدگی، مقایسه توان مالی شرکت های بیمه</li>
-            <li><span>•</span> پیشنهاد شخصی‌سازی‌شده با توجه به نیاز شما</li>
-          </ul>
-        </div>
-
-        <div class="card">
-          <div class="label">بیمه های تحت پوشش</div>
-          <strong>گروه بیمه هایی که میتوانیم برایتان مقایسه کنیم</strong>
-          <ul class="list">
-            <li><span>•</span>بیمه اموال : شخص ثالث،بدنه،آتش سوزی،باربری،بیمه مهندسی</li>
-            <li><span>•</span>بیمه اشخاص : حوادث،عمر و درمان مانند تکمیلی و غیره ...</li>
-            <li><span>•</span>بیمه مسئولیت : مسئولیت عمومی,حرفه ای،کارفرما،تولید کنندگان کالا،شرکت های حمل و نقل</li>
-          </ul>
-        </div>
-
-        <div class="card">
-          <div class="label">اقساطی آسان</div>
-          <strong>از دم قسط — بدون چک، بدون سود، بدون سفته</strong>
-          <ul class="list">
-            <li><span>•</span> قابلیت تعلق وام برای پیش پرداخت بیمه</li>
-            <li><span>•</span> شروع فوری پوشش پس از ثبت درخواست</li>
-            <li><span>•</span> مدارک حداقلی و فرآیند ساده</li>
-            <li><span>•</span> برنامه اقساط قابل تنظیم</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <div class="divider" role="separator" aria-hidden="true"></div>
-
-    <!-- چرا ما -->
-    <section id="how" aria-labelledby="how-title">
-      <h1 id="how-title">چرا ما را انتخاب کنید</h1>
-      <div class="grid">
-        <div class="card">
-          <strong>نماینده مستقل،انتخاب  بیطرفانه شرکت بیمه</strong>
-          <p>تصمیم‌گیری یا پیشنهاد ما بر اساس واقعیت‌ها و مقایسه‌ی منصفانه است، نه علاقه یا تعصب. تصمیم نهایی براساس داده‌های واقعی، قیمت، پوشش و سابقه خدمات ارائه می‌شود.</p>
-        </div>
-        <div class="card">
-          <strong>سرعت و سادگی</strong>
-          <p>استعلام، مقایسه، انتخاب. شما انتخاب می‌کنید، باقی کارها از ثبت تا پرداخت با ما.</p>
-        </div>
-        <div class="card">
-          <strong>پشتیبانی 24 ساعته</strong>
-          <p>جهت پاسخ سریع میتونید تماس بگیرید. در صورت سوال در مورد شرکت های بیمه میتونید روبیکا پیام بدید تا کامل راهنمایی کنم.</p>
-        </div>
-      </div>
-    </section>
-
-    <div class="divider" role="separator" aria-hidden="true"></div>
-
-    <!-- سوالات متداول -->
-    <section id="faq" aria-labelledby="faq-title">
-               <h1 id="faq-title">سوالات متداول</h1>
-      <div class="grid">
-
-          <div class="card">
-          <strong> بدون چک واقعاً ممکنه؟</strong>
-          <p>بله، با شرایط مشخص و مدارک حداقلی. جزئیات برنامه اقساط را هنگام تماس شفاف توضیح می‌دهیم.</p>
-          </div> 
-          <div class="card">
-          <strong>چطوری بیمه هاتون این قدر ارزونه؟</strong>
-          <p>ما بهترین شرکت‌های بیمه رو از نظر پوشش و پایین‌ترین قیمت معرفی می‌کنیم. خرید نقدی ارزون‌تره، ولی برای خرید اقساطی هم شرایطی داریم که حتی پیش‌پرداخت لازم نیست.</p>
-          </div>    
-          <div class="card">
-          <strong>الان بیمه دارم، می‌تونم شماره تلفنم و تاریخ انقضاء بیمه نامه رو بدم تا بعداً باهام تماس بگیرین برای تمدید؟</strong>
-          <p>بله، کافیه تماس بگیرید تا تلفن و تاریخ بیمه‌تون ثبت بشه؛ چند روز قبل از پایان بیمه شما،حتما باهاتون تماس می‌گیریم برای صدور بیمه.</p>
-          </div>
-          <div class="card">
-          <strong>چطوری اعتماد کنم؟</strong>
-          <p>بعد از صدور بیمه نامه،برگه گواهی بیمه نامه رو برای شما چاپ و ارسال میکنیم همچنین بیمه نامه در سایت بیمه مرکزی قابل استعلام هست، و میتونید حتی در نمایندگی بیمه هم استعلام بگیرید </p>
-          </div> 
-          <div class="card">
-          <strong>اگه در تصادف مقصر باشم باید چیکار کنم؟</strong>
-          <p>‌اگر در تصادف مقصر باشید، طرف مقابل برای دریافت خسارت از بیمه شما اقدام می‌کند. برای راهنمایی می‌توانید با شماره درج‌شده روی بیمه‌نامه تماس بگیرید. حداکثر تا ۵ روز کاری باید مدارک لازم را به مراکز خسارت بیمه تحویل دهید. در صورت بروز خسارت جانی (فوت)، پرداخت دیه پس از صدور رأی دادگاه انجام می‌شود.</p>
-          </div>
-          <div class="card">
-          <strong>صدور بیمه نامه چقدر زمان میبره ؟</strong>
-          <p>در بیشتر مواقع نتیجه استعلام و معرفی بهترین گزینه بیمه در همان روز آماده می‌شود. اگر تا قبل از ساعت ۸ شب درخواست صدور بیمه‌نامه بدهید، بیمه‌نامه از ساعت ۱۲ شب همان روز فعال شده و قابل استفاده خواهد بود.</p>
-          </div>
-          
-      </div>
-    </section>
-
-    <div class="divider" role="separator" aria-hidden="true"></div>
-
-    <!-- تماس -->
-    <section id="contact" aria-labelledby="contact-title">
-      <h1 id="contact-title">تماس و استعلام فوری</h1>
-
-      <div class="grid">
-        <div class="card">
-          <div class="label">روبیکا</div>
-          <p>پیام بدهید تا، جدول مقایسه و پیشنهاد نهایی برایتان ارسال شود.</p>
-          <p class="mono">شماره روبیکا: <span id="ro-number">09202812526</span></p>
-          <div class="hero-actions">
-            <a class="btn primary" id="ro-btn" href="#" target="_blank">شروع گفت‌وگو در روبیکا</a>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="label">تلفن</div>
-          <p>برای پاسخ سریع و روشن، همین حالا تماس بگیرید.</p>
-          <p class="mono">شماره تماس: <span id="tel-number">09202812526</span></p>
-          <div class="hero-actions">
-            <a class="btn primary" id="tel-btn" href="#" target="_blank">تماس مستقیم</a>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="label">ایمیل (اختیاری)</div>
-          <p>اگر ترجیح می‌دهید اطلاعات کامل را ایمیلی دریافت کنید، پیام دهید.</p>
-          <p class="mono">ایمیل: <span id="email-address">AN.aliakbar.najafi@gmail.com</span></p>
-          <div class="hero-actions">
-            <a class="btn primary" id="email-btn" href="mailto:AN.aliakbar.najafi@gmail.com" target="_blank">ارسال ایمیل</a>
-          </div>
-        </div>
-
-        <div class="grid">
-        <div class="card">
-          <div class="label">تلگرام</div>
-          <p>پیام بدهید تا، جدول مقایسه و پیشنهاد نهایی برایتان ارسال شود.</p>
-          <p class="mono">شماره تلگرام: <span id="teleg-number">09202812526</span></p>
-          <div class="hero-actions">
-            <a class="btn primary" id="teleg-btn" href="#" target="_blank">شروع گفت‌وگو در تلگرام</a>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-  </main>
-
-  <script>
-    // منوی موبایل
-    const menuBtn = document.getElementById('menu-toggle');
-    const nav = document.getElementById('nav-links');
-    menuBtn.addEventListener('click', ()=>{
-      document.body.classList.toggle('nav-open');
-      const open = document.body.classList.contains('nav-open');
-      menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
-    });
-    // بستن منو پس از کلیک
-    nav.querySelectorAll('a').forEach(link=>{
-      link.addEventListener('click', ()=> document.body.classList.remove('nav-open'));
-    });
-
-    // شماره‌ها و ایمیل (شخصی‌سازی سریع)
-    const roNumberRaw = "09202812526"; // روبیکا
-    const telNumberRaw = "09202812526";  // تلفن
-    const emailRaw    = "AN.aliakbar.najafi@gmail.com";
-
-    document.getElementById("ro-number").textContent = roNumberRaw;
-    document.getElementById("tel-number").textContent = telNumberRaw;
-    document.getElementById("email-address").textContent = emailRaw;
-
-    const roLink = "https://rubika.ir/bimesmart"; //+ watsappNumberRaw.replace(/[^\d+]/g,"").replace("+","");
-    const telegLink = "https://t.me/bimesmart";
-    const telLink = "tel:" + telNumberRaw.replace(/[^\d+]/g,"");
-    document.getElementById("ro-btn").setAttribute("href", roLink);
-    document.getElementById("teleg-btn").setAttribute("href", telegLink);
-    document.getElementById("tel-btn").setAttribute("href", telLink);
-
-    // اسکرول نرم
-    document.querySelectorAll('a[href^="#"]').forEach(a=>{
-      a.addEventListener('click',e=>{
-        const id = a.getAttribute('href').slice(1);
-        const el = document.getElementById(id);
-        if(el){ e.preventDefault(); el.scrollIntoView({behavior:'smooth', block:'start'}); }
-      });
-    });
-  </script>
-
-
-<script> // اسکریپت انیمیشن تیتر سایت     
-  const phrases = [
-    "همه شرکت‌ها، یک نگاه ساده",
-    "مقایسه شفاف، انتخاب مطمئن",
-    "بی‌طرفانه ببینید، هوشمندانه انتخاب کنید",
-    "بیطرفی ما، اطمینان شما",
-    "بیمه‌ای که واقعاً به دردتان می‌خورد",
-    "نقدی بخر، حتی ارزون‌تر از ارزون بیمه شو!",
-  ];
-
-  const typedText = document.getElementById("typed-text");
-  let index = 0;
-  let char = 0;
-  let typing = true;
-
-  function animateText() {
-    const current = phrases[index];
-    if (typing) {
-      char++;
-      typedText.textContent = current.slice(0, char);
-      if (char === current.length) {
-        typing = false;
-        setTimeout(animateText, 1400);
-        return;
-      }
-    } else {
-      char--;
-      typedText.textContent = current.slice(0, char);
-      if (char === 0) {
-        typing = true;
-        index = (index + 1) % phrases.length;
-      }
-    }
-    setTimeout(animateText, typing ? 50 : 15);
-  }
-
-  animateText();
-</script>
-
-
-<p class="footer">
-  مقایسه، انتخاب، صرفه‌جویی — با ما همیشه بیمه‌ات ارزون‌تره!<br>
-  ما اینجاییم تا بهترین بیمه رو با مناسب‌ترین قیمت برات پیدا کنیم.<br>
-  📞 تماس برای مشاوره و ثبت بیمه: <a href="tel:09202812526">2526 281 0920</a><br>
-  📍 فعال در سراسر ایران | 💬 پاسخ‌گویی سریع و دوستانه
-</p>
-</body>
-</html>
+    /* ========================================================
+       آکاردئون لو
